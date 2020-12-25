@@ -11,6 +11,7 @@
     "license": "MGNU GENERAL PUBLIC LICENSE Version 3",
     "dependencies": {
         "apollo-server-express": "^2.19.1",
+        "axios": "^0.21.1",
         "express": "^4.17.1",
         "graphql": "^15.4.0"
     },

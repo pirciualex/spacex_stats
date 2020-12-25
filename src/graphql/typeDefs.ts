@@ -7,8 +7,9 @@ export const typeDefs = gql`
         name: String!
         date_utc: String!
         date_local: String!
-        success: Boolean!
-        rocket: Rocket!
+        success: Boolean
+        rocket: ID!
+        rocketData: Rocket!
     }
 
     type Rocket {
@@ -19,6 +20,8 @@ export const typeDefs = gql`
 
     type Query {
         launches: [Launch!]!
+        launch(id: ID!): Launch!
         rockets: [Rocket!]!
+        rocket(id: ID!): Rocket!
     }
 `;
