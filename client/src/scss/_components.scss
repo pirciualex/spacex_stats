@@ -34,3 +34,145 @@
     justify-content: center;
     align-items: center;
 }
+
+// ================
+// 4.3 Buttons
+// ================
+
+.btn {
+    display: inline-block;
+    border: solid;
+    color: $light;
+    text-align: center;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+}
+
+.btn-primary {
+    color: $dark;
+    background-color: $primary;
+    border-color: $primary;
+    transition: background-color 300ms, border-color 300ms;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: darken($color: $primary, $amount: 8);
+    border-color: darken($color: $primary, $amount: 8);
+}
+
+.btn-accent {
+    background-color: $accent;
+    border-color: $accent;
+    transition: background-color 300ms, border-color 300ms;
+}
+
+.btn-accent:hover,
+.btn-accent:focus {
+    background-color: darken($color: $accent, $amount: 8);
+    border-color: darken($color: $accent, $amount: 8);
+}
+
+// ====================
+// 4.4 Typography
+// ====================
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+
+    @include desktop {
+        font-size: 3.5rem;
+        margin-bottom: 2rem;
+    }
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+
+    @include desktop {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+}
+
+h3 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+
+    @include desktop {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+}
+
+h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+
+    @include desktop {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.text-success {
+    color: $success;
+}
+
+.text-danger {
+    color: $danger;
+}
+
+// ======================
+// 4.4 Launch
+// ======================
+.launch {
+    background-color: darken($color: $accent, $amount: 35);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+    padding: 2rem 1rem;
+    border-radius: 0.3rem;
+
+    .info {
+        p {
+            margin-top: 2rem;
+        }
+    }
+}
+
+// ======================
+// 4.5 Mission legend
+// ======================
+.mission-legend {
+    margin: 2rem 0;
+
+    p {
+        margin: 0.75rem 0;
+    }
+
+    .succeeded,
+    .failed {
+        padding: 0 1rem;
+        margin-right: 1rem;
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    .succeeded {
+        background-color: $success;
+    }
+
+    .failed {
+        background-color: $danger;
+    }
+}

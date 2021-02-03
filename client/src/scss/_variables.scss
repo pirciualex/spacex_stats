@@ -9,6 +9,8 @@ $light: #f5f1f1;
 $primary: #657085;
 $accent: #6175a3;
 $font: #ebebeb;
+$danger: #d31c25;
+$success: #28c23a;
 
 @mixin phone {
     @media (min-width: #{$phone}) {

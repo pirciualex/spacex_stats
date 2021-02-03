@@ -1,6 +1,8 @@
 import { gql, useQuery } from "@apollo/client";
 import React from "react";
+
 import LaunchItem from "./LaunchItem";
+import MissionLegend from "./MissionLegend";
 
 const LAUNCHES = gql`
     query {
@@ -23,6 +25,7 @@ const Launches = () => {
     return (
         <div className="container">
             <h2>Lunches</h2>
+            <MissionLegend/>
             {data.launches.map((launch: any) => {
                 return (
                     <LaunchItem key={launch.flight_number} launch={launch} />
