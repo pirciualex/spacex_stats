@@ -1,17 +1,21 @@
 import React from "react";
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import { MemoryRouter, Route } from "react-router-dom";
 import logo from "./logo.svg";
-import "./App.scss";
+import Home from "./pages/Home";
 
 function App() {
+    const client = new ApolloClient({
+        uri: "http://localhost:4000/graphql",
+        cache: new InMemoryCache(),
+    });
     return (
-        <div className="App">
+        <ApolloProvider client={client}>
             <img src={logo} alt="SpaceX logo" />
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-                numquam quod at ullam! Autem ut sed voluptas ex velit et magni
-                iure nam ea est eveniet vero, corporis odit veniam!
-            </p>
-        </div>
+            <MemoryRouter>
+                <Route path="/" component={Home} />
+            </MemoryRouter>
+        </ApolloProvider>
     );
 }
 
