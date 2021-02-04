@@ -35,8 +35,20 @@
     align-items: center;
 }
 
+// ===============
+// 4.3 Links
+// ===============
+.primary-link {
+    color: lighten($color: $primary, $amount: 20);
+}
+
+.primary-link:hover,
+.primary-link:focus {
+    color: transparentize($color: $primary, $amount: 0.2);
+}
+
 // ================
-// 4.3 Buttons
+// 4.4 Buttons
 // ================
 
 .btn {
@@ -74,7 +86,7 @@
 }
 
 // ====================
-// 4.4 Typography
+// 4.5 Typography
 // ====================
 h1,
 h2,
@@ -139,8 +151,40 @@ h4 {
     color: $danger;
 }
 
+// ================
+// 4.6 Navbar
+// ================
+nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 15vh;
+    border-bottom: 1px solid darken($dark, 5%);
+    z-index: 100;
+
+    @include desktop {
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+.active {
+    background-color: lighten($color: $dark, $amount: 7);
+}
+
 // ======================
-// 4.4 Launch
+// 4.7 Footer
+// ======================
+footer {
+    background-color: lighten($color: $dark, $amount: 7);
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+// ======================
+// 4.8 Launch
 // ======================
 .launch {
     background-color: $accent;
@@ -186,7 +230,7 @@ h4 {
 }
 
 // ======================
-// 4.5 Mission legend
+// 4.9 Mission legend
 // ======================
 .mission-legend {
     margin: 2rem 0;
