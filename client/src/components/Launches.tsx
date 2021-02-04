@@ -3,6 +3,7 @@ import React from "react";
 
 import LaunchItem from "./LaunchItem";
 import MissionLegend from "./MissionLegend";
+import Spinner from "./Spinner";
 
 const LAUNCHES = gql`
     query {
@@ -18,7 +19,7 @@ const LAUNCHES = gql`
 const Launches = () => {
     const { loading, error, data } = useQuery(LAUNCHES);
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <Spinner />;
     if (error)
         return <p>Oops, there seems to be an error... Please try again!</p>;
 

@@ -2,6 +2,7 @@ import { gql, useQuery } from "@apollo/client";
 import React from "react";
 import Moment from "react-moment";
 import { Link, RouteComponentProps } from "react-router-dom";
+import Spinner from "../components/Spinner";
 
 interface LaunchProps {
     id: string;
@@ -31,7 +32,7 @@ const Launch: React.FC<RouteComponentProps<LaunchProps>> = ({
     // const id = match.params.id;
     const { loading, error, data } = useQuery(LAUNCH, { variables: { id } });
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <Spinner />;
     if (error)
         return <p>Oops, there seems to be an error... Please try again!</p>;
 
