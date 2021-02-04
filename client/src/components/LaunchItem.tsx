@@ -1,5 +1,7 @@
 import React from "react";
 import Moment from "react-moment";
+import { Link } from "react-router-dom";
+
 import { Launch } from "../interfaces/Launch";
 
 interface LaunchItemProps {
@@ -27,7 +29,9 @@ const LaunchItem: React.FC<LaunchItemProps> = ({ launch }) => {
                     </Moment>
                 </p>
             </div>
-            <button className="btn btn-primary">View details</button>
+            <Link to={`/launch/${launch.id}`} className="btn btn-primary">
+                View details
+            </Link>
         </div>
     );
 };

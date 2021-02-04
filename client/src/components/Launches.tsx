@@ -7,7 +7,7 @@ import MissionLegend from "./MissionLegend";
 const LAUNCHES = gql`
     query {
         launches {
-            flight_number
+            id
             name
             date_local
             success
@@ -25,11 +25,9 @@ const Launches = () => {
     return (
         <div className="container">
             <h2>Lunches</h2>
-            <MissionLegend/>
+            <MissionLegend />
             {data.launches.map((launch: any) => {
-                return (
-                    <LaunchItem key={launch.flight_number} launch={launch} />
-                );
+                return <LaunchItem key={launch.id} launch={launch} />;
             })}
         </div>
     );

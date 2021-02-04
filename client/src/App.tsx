@@ -1,8 +1,10 @@
 import React from "react";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
-import { MemoryRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
+
 import logo from "./logo.svg";
 import Home from "./pages/Home";
+import Launch from "./pages/Launch";
 
 function App() {
     const client = new ApolloClient({
@@ -12,9 +14,10 @@ function App() {
     return (
         <ApolloProvider client={client}>
             <img src={logo} alt="SpaceX logo" />
-            <MemoryRouter>
-                <Route path="/" component={Home} />
-            </MemoryRouter>
+            <BrowserRouter>
+                <Route exact path="/" component={Home} />
+                <Route path="/launch/:id" component={Launch} />
+            </BrowserRouter>
         </ApolloProvider>
     );
 }

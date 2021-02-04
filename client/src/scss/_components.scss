@@ -123,6 +123,14 @@ h4 {
     }
 }
 
+.text-primary {
+    color: $primary;
+}
+
+.text-accent {
+    color: $accent;
+}
+
 .text-success {
     color: $success;
 }
@@ -135,7 +143,7 @@ h4 {
 // 4.4 Launch
 // ======================
 .launch {
-    background-color: darken($color: $accent, $amount: 35);
+    background-color: $accent;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -146,6 +154,33 @@ h4 {
     .info {
         p {
             margin-top: 2rem;
+        }
+    }
+}
+
+.launch-page {
+    h1 {
+        margin-top: 4rem;
+    }
+
+    .launch-info,
+    .rocket-info {
+        margin: 3rem 0;
+
+        ul {
+            list-style: none;
+            background-color: $accent;
+            border-radius: 0.3rem;
+
+            li {
+                padding: 1rem 2rem;
+                color: darken($color: $light, $amount: 10);
+
+                &:hover {
+                    background-color: lighten($color: $accent, $amount: 5);
+                    color: $light;
+                }
+            }
         }
     }
 }
